@@ -25,4 +25,4 @@ What is a pull request and how do you create and merge one?
 -ensures that any changes made on the GitHub repo will be pulled to your local machine so that you don't have problems pushing your changes back to GitHub
 
 Why are pull requests preferred when working with teams?
--ensures that each team member is always working on the most up to date version of the project
+-ensures that each team member is always working on the most up to date version of the collaboration
