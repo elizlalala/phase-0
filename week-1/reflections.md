@@ -46,3 +46,35 @@ rm: remove file and maybe other objects
 help: shows you a lot of text information about the following command (use “man” in mac)
 
 ### 1.4 Forking and Cloning Reflection
+
+
+
+To create a new repository:
+
+Go to your GitHub profile.  
+Click the "Repositories" tab.  
+To the right of the menu, click "New."  
+Decide if you would like this repo to be public or private.  
+Use GitHub resources to decide if you need a license and which type added to your repository. 
+Click "Create Repository."
+To Fork a repo:
+
+Locate the repository that you would like to add to, build upon, or manipulate.
+Hit the "Fork" icon in the upper right hand corner.
+If you have multiple GitHub accounts, select the organization that you're forking this repo to.
+ 
+
+To Clone a repo to your machine
+
+If the repository is not already in your account, than fork it to your account.
+Navigate to your terminal.
+Change to the desired directory where you would like to store the repository.
+Enter:
+git clone [paste URL of Repository copied from your GitHub account here]
+ 
+
+The reason you would want to fork a repository as opposed to creating a brand new one is to stand on the shoulders of publicly shared, quality code that has already been developed.
+
+ 
+
+I didn't experience any struggle in setting up GitHub.  I think it was relatively straight forward at this stage.  I'm sure that will change significantly as I do more with it.
