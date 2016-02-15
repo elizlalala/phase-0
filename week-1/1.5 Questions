@@ -1,0 +1,28 @@
+How does tracking and adding changes make developers' lives easier?
+-It's much safer to experiment with new ideas for your product.
+-Identifying where/when bugs occured and reverting back to code without bugs is very easy with version control.
+
+What is a commit?
+-A commit is a forever saved and time stamped version of your code.
+What are the best practices for commit messages?
+-They should summarize concisely the changes that were made in this version or anything unique to this version as opposed to others.
+
+What does the HEAD^ argument mean?
+-HEAD^ is the most recent commit prior to the one you are currently working on.
+
+What are the 3 stages of a git change and how do you move a file from one stage to the other?
+-pull up to date master
+-commit changes
+-push changes and merge your changes branch back to master
+
+Write a handy cheatsheet of the commands you need to commit your changes.
+-git status
+-git add . or git add <filename>
+-git commit -m "comments go here"
+
+What is a pull request and how do you create and merge one?
+-git pull
+-ensures that any changes made on the GitHub repo will be pulled to your local machine so that you don't have problems pushing your changes back to GitHub
+
+Why are pull requests preferred when working with teams?
+-ensures that each team member is always working on the most up to date version of the project
