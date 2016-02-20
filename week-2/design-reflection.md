@@ -2,7 +2,7 @@ My favorite aspect of this challenge was learning the distinction between design
 
 Additionally, I did feel like some of these reflection questions were frivolous and redundant, however I guess they forced me to articulate my planning of this site even though I felt as thought there wasn't a whole lot of structure that I was choosing on my own.  The question about "desired actions from the target audience" did have me second guessing my placement of Contact information and such. 
 
-![Alt text](/Users/eliz/Desktop/phase-0/week-2/imgs/site-map.png)
+![Site Map](/week-2/imgs/site-map.png)
 
 What are the 6 Phases of Web Design?
 
