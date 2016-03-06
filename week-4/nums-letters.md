@@ -29,6 +29,12 @@ puts "There are " + (60*24*(365*8 + 366*2)).to_s + " minutes in one decade."
 
 
 #Reflections
+Links to exercises:
+[Define Method](https://github.com/elizlalala/phase-0/blob/master/week-4/define-method/my_solution.rb)
+[Address](https://github.com/elizlalala/phase-0/blob/master/week-4/address/my_solution.rb)
+[Basic Math](https://github.com/elizlalala/phase-0/blob/master/week-4/math/my_solution.rb)
+
+
 ##How does Ruby handle addition, subtraction, multiplication, and division of numbers?
 
 
