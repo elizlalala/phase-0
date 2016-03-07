@@ -44,7 +44,35 @@
 =begin hours in a year	and minutes in a decade
 =end
 
-puts "There are " + (24*365).to_s + " hours in one year."
-puts "There are " + (60*24*(365*8 + 366*2)).to_s + " minutes in one decade."
+# puts "There are " + (24*365).to_s + " hours in one year."
+# puts "There are " + (60*24*(365*8 + 366*2)).to_s + " minutes in one decade."
+
+# def over_b?(exp, budge)
+# 	total_spent = 0.00
+# 	exp.each do |bill|
+# 		total_spent += bill
+# 	end
+# 	total_spent > budge
+# end
+
+# puts (over_b?([20,5],24) && over_b?([20,3],24))
+
+# puts over_b?([20,5],24)
+
+# puts over_b?([20,3],24)
+
+# def number_selector(list)
+# 	p new_list = list.collect {|num| num % 2 == 0 || num % 3 == 0}
+# end
+
+# number_selector([1,2,3,4,6,9,15,23])
+
+def sum(a,b)
+	sum = a + b
+end
+
+puts sum(5,6)
+
+
 
 
