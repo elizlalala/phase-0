@@ -5,7 +5,7 @@
 # include it in this file. Also make sure everything that isn't code
 # is commented in the file.
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge [with: Kelson].
 
 # 0. total Pseudocode
 # make sure all pseudocode is commented out!
@@ -25,15 +25,15 @@ p the new variable
 
 # 1. total initial solution
 
-def total(num_array)
-	sum = 0
-	num_array.each do |num|
-		sum = sum + num
-	end
-	p sum
-end
+# def total(num_array)
+# 	sum = 0
+# 	num_array.each do |num|
+# 		sum = sum + num
+# 	end
+# 	p sum
+# end
 
-total([2,3,4])
+# total([2,3,4])
 
 
 
@@ -60,8 +60,26 @@ total([2,3,4])
 
 # 5. sentence_maker initial solution
 
+# def sentence_maker(some_words)
+# 	some_words[0] = some_words[0].to_s.capitalize!
+# 	sentence = String.new
+# 	some_words.each do |word|
+# 		sentence = sentence.to_s + word.to_s + ' '
+# 	end
+# 	n = sentence.length
+# 	sentence[n-1] = '.'
+# 	p sentence.to_s
+# end
+
+# sentence_maker(['i', 'love', 'birds', 'especially', 'owls'])
+
 
 
 # 6. sentence_maker refactored solution
+
+def sentence_maker(some_words)
+	some_words[0] = some_words[0].to_s.capitalize!
+	sentence = some_words.join(' ').to_s + '.'
+end
 
 
