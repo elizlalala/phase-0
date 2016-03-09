@@ -77,3 +77,34 @@ update_item(second_list, "ice_cream", 4)
 remove_item(second_list, "lemonade")
 update_item(second_list, "ice_cream", 1)
 print_list(second_list)
+
+=begin
+# What did you learn about pseudocode from working on this challenge?
+
+## I didn't learn alot about pseudo code in this case, 
+but we did refer back to it a lot more than in previous challenges.
+We spend a good bit of time on the 2nd method, so by the time we arrived at the 3rd method,
+we were a little disoriented as to what we were going to be doing.
+It was helpful to have the pseudocode right there.
+
+
+# What are the tradeoffs of using Arrays and Hashes for this challenge?
+# => It's seemingly easier to jump from a delimited string into an array,
+but beyond that, using a hash made alot more sense than an array because
+you could store the grocery items as keys and the quantity alonside as a value.
+
+# What does a method return?
+# => Implicitly, a method returns the final line of code within the body of the method.
+You can opt to expicitly return a value or object or your choice by using returns or p.
+
+# What kind of things can you pass into methods as arguments?
+# =>  Strings, Integers, Floats, Booleans, Arrays, Hashes
+
+# How can you pass information between methods?
+# => You must set the output of a method to a variable that is local to the program outside of the method.
+Then that variable can be a parameter in another method. 
+
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+# => The limitations of local variables were solidified.  Adding and removing items within hashes was
+somewhat solidified as well.
+=end
