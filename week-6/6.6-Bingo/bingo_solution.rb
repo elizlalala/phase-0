@@ -6,8 +6,7 @@
 # Release 0: Pseudocode
 # Outline:
 # Input: An array of arrays
-# Output: 
-# Steps:
+
 
 # Create a method to generate a letter ( b, i, n, g, o) and a number (1-100)
   #create call method
@@ -31,40 +30,104 @@
 
 # Initial Solution
 
+# class BingoBoard
+
+#   def initialize(board)
+#     @bingo_board = board
+#   end
+
+#   def call
+#     # @pick_num = 0
+#     # @pick_letter = String.new
+#     @bingo = ['b', 'i', 'n', 'g', 'o']
+#     # @pick_letter = @bingo.sample
+#     # pick_num = rand(100)
+#     @pick_letter = 'b'
+#     @pick_num = 83
+#     p "#{@pick_letter}#{@pick_num}"
+#     puts ""
+#     # @pick_num = pick_num
+#   end
+
+#   def check
+
+#     #check for the number in the appropriate row
+#     board_transpose = @bingo_board.transpose
+#     column = board_transpose[@bingo.index(@pick_letter)]
+#     column[column.index(@pick_num)] = 'X' if column.index(@pick_num) != nil
+#     @bingo_board = board_transpose.transpose
+
+#     #print current board
+#     puts "Transposed Bingo Board"
+#     board_transpose.each {|row| p row}
+#     puts ""
+#     puts "Updated Board"
+#     @bingo_board.each {|row| p row}
+#   end
+
+# end
+
+# Refactored Solution
+
 class BingoBoard
 
   def initialize(board)
     @bingo_board = board
   end
 
+  def bingo_board
+    #pretty print board
+    puts ''
+    p ['B ', 'I ', 'N ', 'G ', 'O '].join('  ')
+    @bingo_board.each {|row| p row.join('  ')}
+  end
+
   def call
-    pick_num = 0
-    @pick_letter = String.new
-    @bingo = ['b', 'i', 'n', 'g', 'o']
-    # @pick_letter = @bingo.sample
-    # pick_num = rand(100)
-    @pick_letter = 'b'
-    pick_num = 83
-    p "#{@pick_letter}#{pick_num}"
-    puts ""
-    @pick_num = pick_num
+    @letter = rand(5)
+    @num = rand(100)
+    p "The number called is #{['B', 'I', 'N', 'G', 'O'][@letter]}#{@num}"
   end
 
   def check
-    board_transpose = @bingo_board.transpose
-    column = board_transpose[@bingo.index(@pick_letter)]
-    column[column.index(@pick_num)] = 'X' if column.index(@pick_num) != nil
-    @bingo_board = board_transpose.transpose
-    puts "Transposed Bingo Board"
-    board_transpose.each {|row| p row}
-    puts ""
-    puts "Updated Board"
-    @bingo_board.each {|row| p row}
+    @bingo_board.each {|row| row[@letter] = 'X' if (row[@letter] == @num)}
+
+    #print board
+    puts ''
+    p ['B ', 'I ', 'N ', 'G ', 'O '].join('  ')
+    @bingo_board.each {|row| p row.join('  ')}
   end
 
 end
 
-# Refactored Solution
+
+#   def call
+    
+#     @pick_letter = @bingo.sample
+#     @pick_num = rand(100)
+#     # @pick_letter = 'b'
+#     # @pick_num = 83
+#     p "#{@pick_letter}#{@pick_num}"
+#     puts ""
+#     # @pick_num = pick_num
+#   end
+
+#   def check
+
+#     #check for the number in the appropriate row
+#     board_transpose = @bingo_board.transpose
+#     column = board_transpose[@bingo.index(@pick_letter)]
+#     column[column.index(@pick_num)] = 'X' if column.index(@pick_num) != nil
+#     @bingo_board = board_transpose.transpose
+
+#     #print current board
+#     puts "Transposed Bingo Board"
+#     board_transpose.each {|row| p row}
+#     puts ""
+#     puts "Updated Board"
+#     @bingo_board.each {|row| p row}
+#   end
+
+# end
 
 
 
@@ -76,9 +139,9 @@ board = [[47, 44, 71, 8, 88],
         [75, 70, 54, 80, 83]]
 
 new_game = BingoBoard.new(board)
-p new_game
 new_game.call
 new_game.check
+new_game.bingo_board
 
 
 #Reflection
@@ -95,23 +158,29 @@ a class here is a great option to save time and uphold readability.
 
 Q: How can you access coordinates in a nested array?
 A: You simply have to reference the index position within the outer array followed by the index position within the inner
-array.  However, when the values of the indeces are dynamic (i.e. dependent on the random values being generated) I thought
-it was worthwhile to throw in a couple extra variables to help clean up that referencing.
+array.  However, when the values of the indeces are dynamic (i.e. dependent on the random values being generated) I initially 
+thought it was worthwhile to throw in a couple extra variables to help clean up that referencing. You'll see that in my
+refactoring I aggressively change this approach.
 
 Q: What methods did you use to access and modify the array?
-A: I used .index and .transpose heavily in my initial solution.
+A: I used .index and .transpose heavily in my initial solution because for some reason, I thought that reorganizing
+the matrix to hold all 'B' values, 'I' values, etc in their own arrays would make the solution easier.  As I started
+typing the solution I realized - there must be an easier way.  In my refactored solution, I only use .each method.
 
 Q: Give an example of a new method you learned while reviewing the Ruby docs. Based on what you see in the docs, 
 what purpose does it serve, and how is it called?
-A: I had never used .transpose before, but it is specifically intended for multidimensional arrays.  Sometimes, it is
-logically helpful or mathematically necessary to transpose matrices.  You call it simply by appending .transpose to the
-array variable name.  
+A: I had never used .transpose before, but it is specifically intended for multidimensional arrays so it seemed like
+a natural fit.  It exists because sometimes, it is logically helpful or mathematically necessary to transpose matrices.  
+You call it simply by appending .transpose to the array variable name.  
 
 Q: How did you determine what should be an instance variable versus a local variable?
-A: I needed/wanted quite a few variables in the check method.  But they did not need to be referenced anywhere else within
-the class, and frankly it would have become very confusing if they were.  So I tried to keep as many extra variables
-as I could isolated to this method so that they could stay local.  The board and random selection call were the only instance
-variables that I wanted to have.
+A: From the start, my goal was to only have three instance variables: the board, the 'letter' drawn, and the number
+drawn.  Those three variables should be able to give you all the information you need across the class.  I wanted
+to keep any other variables I used isolated to their relevant method.  I thought that this was a good way to
+be thinking about how methods should be used within a class.
 
 Q: What do you feel is most improved in your refactored solution?
+A: So many things.  For some reason, I just thought that reorganizing the matrix was so brilliant at first.  And then
+when I started typing my initial solution, I was horrified by how complicated I was making things.  I pushed through
+  for the sake of seeing it work, but then I just cleared the table for my refactoring.  
 =end
