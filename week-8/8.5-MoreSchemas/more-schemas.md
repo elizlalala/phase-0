@@ -1,10 +1,10 @@
 
 Release 2: One to One Relationship
-![Release 2: One to One](/imgs/R2-One to One.png)
+![Release 2: One to One](https://github.com/elizlalala/phase-0/blob/master/week-8/8.5-MoreSchemas/imgs/R2-One%20to%20One.png)
 
 
 Release 4: Many to Many Relationship
-![Release 4: Many to Many](/imgs/R4-Many to Many.png)
+![Release 4: Many to Many](https://github.com/elizlalala/phase-0/blob/master/week-8/8.5-MoreSchemas/imgs/R4-Many%20to%20Many.png)
 
 REFLECTIONS
 Q: What is a one-to-one database?
