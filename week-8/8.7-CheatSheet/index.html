@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Methods Tables</title>
+	<meta charset="UTF-8">
+	<!-- <link href='https://fonts.googleapis.com/css?family=Droid+Sans:700' rel='stylesheet' type='text/css'> -->
+	<link href='https://fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="ruby-cheatsheet.css">
+</head>
+<body>
+	<div class="wrapper">
+		
+		<header>
+			<h2><img src="imgs/ruby.png" id="logo" alt="Roby Icon"></h2>
+			<h4>Focused List Of Less Common Methods</h4>
+			</header>
+		<table id="array">
+	  		<caption>Add To An Array</caption>
+	  		<tr>
+	   			<th>Method Name</th>
+	    		<th>Basic Syntax</th>
+	    		<th>=> Output</th>
+	    		<th>Destructive<br>Option?</th>
+	    		<th>JS<br>Equivalent?</th>
+	  		</tr>
+	 		<tr>
+			    <td>.assoc<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>[["a", "b"],[1, 2]].assoc(1)</td>
+			    <td>=> [1, 2]</td>
+			    <td> </td>
+			    <td> </td>
+			</tr>
+			<tr>
+			    <td>.rassoc<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>[["a", "b"],[1, 2]].rassoc(2)</td>
+			    <td>=> [1, 2]</td>
+			    <td> </td>
+			    <td> </td>
+			</tr>
+			<tr>
+			    <td>.compact<br>
+			    	<span class="note">Removes nil elements</span>
+			    </td>
+			    <td>[1, "dog", nil, 5, [1]].compact</td> 
+			    <td>=> [1, "dog", 5, [1]]</td>
+			    <td> </td>
+			    <td> </td>
+	  		</tr>
+	  		<tr>
+			    <td>.delete_at<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>[1, 2, 3, 4, 5].delete_at(3)</td> 
+			    <td>=> [1, 2, 3, 5]</td>
+			    <td> </td>
+			    <td>array.splice(0, index);<br> 
+			    	delete array(index);<br>
+			    	<span class="note">Delete leaves nils</span>
+
+			    </td>
+	  		</tr>
+	  		<tr>
+			    <td>.fetch<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>["a", "b", "c", "d"].fetch(2)</td>
+			    <td>=> "c"</td>
+			    <td> </td>
+			    <td> </td>
+			</tr>
+			<tr>
+			    <td>.flatten<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>[[1, 2, 3], [4, 5, 6, [7, 8]], 9].flatten</td>
+			    <td>=> [1, 2, 3, 4, 5, 6, 7, 8, 9]</td>
+			    <td> </td>
+			    <td> </td>
+			</tr>
+			<tr>
+			    <td>.insert<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>["a", "b", "c", "d"].insert(object)</td>
+			    <td>=> ["a", "b", 99, "c", "d"]</td>
+			    <td> </td>
+			    <td> .splice(index, 0, "add me");</td>
+			</tr>
+			<tr>
+			    <td>.join<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>["a", "b", "c", "d"].join</td>
+			    <td>=> "abcd"</td>
+			    <td> </td>
+			    <td>.join("+");</td>
+			</tr>
+			<tr>
+			    <td>.last(n)<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>["a", "b", "c", "d"].last   <br>
+			    ["a", "b", "c", "d"].last(2)</td>
+			    <td>=> "d"<br>
+			    	=> ["c", "d"][</td>
+			    <td> </td>
+			    <td> </td>
+			</tr>
+			<tr>
+			    <td>.pop<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>["a", "b", "c", "d"].pop</td>
+			    <td>=> "d" </td>
+			    <td> !!! </td>
+			    <td> .pop();</td>
+			</tr>
+			<tr>
+			    <td>.push<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>["a", "b", "c", "d"].push("e")</td>
+			    <td>=> ["a", "b", "c", "d", "e"]</td>
+			    <td> ! </td>
+			    <td> .push("z");</td>
+			</tr>
+			<tr>
+			    <td>.reject<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>["a", "b", "c", "d"].reject {|x| x == ("c" || "e"))</td>
+			    <td>=> ["a", "b", "c"]</td>
+			    <td> ! </td>
+			    <td> </td>
+			</tr>
+			<tr>
+			    <td>.reverse<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>["a", "b", "c", "d"].reverse</td>
+			    <td>=> ["d", "c", "b", "a"]</td>
+			    <td> ! </td>
+			    <td> .reverse();</td>
+			</tr>
+			<tr>
+			    <td>.reverse_each<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>["a", "b", "c", "d"].reverse_each {|x| x + "!"}</td>
+			    <td>=> ["d!", "c!", "b!", "a!"]</td>
+			    <td> </td>
+			    <td> </td>
+			</tr>
+			<tr>
+			    <td>.rindex<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>["a", "a", "a", "b"].rindex<br>
+			    	["a", "a", "a", "b"].rindex("a")</td>
+			    <td>=> 3<br>
+			    	=> 2</td>
+			    <td> </td>
+			    <td> </td>
+			</tr>
+			<tr>
+			    <td>.rotate(n)<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>[1, 2, 3, 4, 5].rotate(3)</td>
+			    <td>=> [4, 5, 1, 2, 3]</td>
+			    <td> ! </td>
+			    <td> </td>
+			</tr>
+			<tr>
+			    <td>.sample<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>["a", "b", "c", "d"].sample<br>
+			    	["a", "b", "c", "d"].sample(2)</td>
+			    <td>=> "b"<br>
+			    	=> ["c", "e"]</td>
+			    <td> ! </td>
+			    <td> </td>
+			</tr>
+			<tr>
+			    <td>.select<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>["a", "b", "c", "d"].select {|x| x == ("c" || "e"))</td>
+			    <td>=> ["c", "e"]</td>
+			    <td> </td>
+			    <td> </td>
+			</tr>
+			<tr>
+			    <td>.shift(n)<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>["a", "b", "c", "d"].shift<br>
+			    	["a", "b", "c", "d"].shift(2)</td>
+			    <td>=> "a"<br>
+			    	=> ["b", "e"]</td>
+			    <td> !!! </td>
+			    <td> .shift();</td>
+			</tr>
+			<tr>
+			    <td>.shuffle<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>[1, 2, 3, 4, 5].rotate(count = 3)</td>
+			    <td>=> [4, 2, 1, 5, 3]</td>
+			    <td> ! </td>
+			    <td> .unshift("z")</td>
+			</tr>
+			<tr>
+			    <td>.sort<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>["f", "m", "t", "b"].sort<br>
+			    	["f", "m", "t", "b"].sort {|x, y| y <=> x}
+			    </td>
+			    <td>=> ["b", "f", "m", "t"]<br>
+			    	=> ["t", "m", "f", "b"]</td>
+			    <td> ! </td>
+			    <td> .unshift("z")</td>
+			</tr>
+			<tr>
+			    <td>.transpose<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>[[1, 2, 3], [4, 5, 6]].transpose</td>
+			    <td>=> [[1, 4], [2, 5], [3, 6]]</td>
+			    <td> </td>
+			    <td> </td>
+			</tr>
+			<tr>
+			    <td>.uniq<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>[1, 3, 3, 4, 5, 5].uniq</td>
+			    <td>=> [1, 3, 4, 5] </td>
+			    <td> ! </td>
+			    <td> </td>
+			</tr>
+			<tr>
+			    <td>.unshift(n)<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>["a", "b", "c", "d"].unshift("zzz")</td>
+			    <td>=> ["zzz", a", "b", "c", "d"]</td>
+			    <td> !!! </td>
+			    <td> </td>
+			</tr>
+			<tr>
+			    <td>.zip<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>[1, 2].zip([3, 4])</td>
+			    <td>=> [[1, 3], [2, 4]]</td>
+			    <td> </td>
+			    <td> </td>
+			</tr>
+		</table>
+		<table id="hash">
+	  		<caption>Hash Methods</caption>
+	  		<tr>
+	   			<th>Method Name</th>
+	    		<th>Basic Syntax</th>
+	    		<th>=> Output</th>
+	    		<th>Destructive<br>Option?</th>
+	  		</tr>
+	 		<tr>
+			    <td>.assoc<br>
+			    	<span class="note"></span>
+			    </td>
+			    <td>[["a", "b"],[1, 2]].assoc(1)</td>
+			    <td>=> [1, 2]</td>
+			    <td> </td>
+			</tr>
+			
+		</table>
+	</div>
+	<footer></footer>
+</body>
+</html>
